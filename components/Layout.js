@@ -1,27 +1,25 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
 export default function Layout({ children }) {
-  return (
-    <div className="layout">
-      <header>
-        <Link href="/">
-          <a>
-            <h1>
-              <span>Just Add</span>
-              <span>Marmite</span>
-            </h1>
-            <h2>Spread The Joy</h2>
-          </a>
-        </Link>
-      </header>
+	return (
+		<div className="layout">
+			<header>
+				<Link href="/">
+					<a>
+						<h2>
+							<span>Original Texas</span>
+							<span>Burger Mountain</span>
+						</h2>
+						<h2>Time to scale</h2>
+					</a>
+				</Link>
+			</header>
 
-      <div className="page-content">
-        { children }
-      </div>
+			<div className="page-content">{children}</div>
 
-      <footer>
-        <p>Copyright 2021 Just Add Marmite :)</p>
-      </footer>
-    </div>
-  )
+			<footer>
+				<p>&copy; 2021 Burger Mountain</p>
+			</footer>
+		</div>
+	);
 }
