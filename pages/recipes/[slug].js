@@ -79,7 +79,8 @@ export async function getStaticProps({ params: { slug } }) {
 	return {
 		props: {
 			recipe: items[0]
-		}
+		},
+		revalidate: 10
 	};
 }
 
@@ -97,7 +98,6 @@ export const getStaticPaths = async () => {
 	// via SSR, then cache it for future requests
 	return {
 		paths,
-		fallback: 'blocking',
-		revalidate: 10
+		fallback: 'blocking'
 	};
 };
