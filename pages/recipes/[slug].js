@@ -39,7 +39,7 @@ export default function RecipeDetails({ recipe }) {
 						text-transform: uppercase;
 					}
 
-					.banner h2 {
+					.banner h1 {
 						position: relative;
 						display: inline-block;
 						top: -60px;
