@@ -19,7 +19,7 @@ export default function RecipeDetails({ recipe }) {
 					width={featuredImage.fields.file.details.image.width}
 					height={featuredImage.fields.file.details.image.height}
 				/>
-				<h1>{title}</h1>
+				<h1 className="heading">{title}</h1>
 			</div>
 			<div className="info">
 				<p>Takes about {cookingTime} mins to cook. </p>
@@ -34,7 +34,7 @@ export default function RecipeDetails({ recipe }) {
 			</div>
 			<style jsx>
 				{`
-					h1 {
+					.banner .heading {
 						position: relative;
 						display: inline-block;
 						top: -60px;
