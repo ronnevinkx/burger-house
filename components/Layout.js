@@ -14,9 +14,7 @@ export default function Layout({ children }) {
 					</a>
 				</Link>
 			</header>
-
 			<div className="page-content">{children}</div>
-
 			<footer>
 				<p>&copy; 2021 Burger House</p>
 			</footer>
