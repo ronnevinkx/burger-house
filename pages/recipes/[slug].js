@@ -97,6 +97,7 @@ export const getStaticPaths = async () => {
 	// via SSR, then cache it for future requests
 	return {
 		paths,
-		fallback: 'blocking'
+		fallback: 'blocking',
+		revalidate: 10
 	};
 };
