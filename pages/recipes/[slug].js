@@ -21,6 +21,7 @@ export default function RecipeDetails({ recipe }) {
 				/>
 				<h2 className="heading">{title}</h2>
 			</div>
+			<h3 className="heading">Some header</h3>
 			<div className="info">
 				<p>Takes about {cookingTime} mins to cook. </p>
 				<h3>Ingredients:</h3>
@@ -34,7 +35,7 @@ export default function RecipeDetails({ recipe }) {
 			</div>
 			<style jsx>
 				{`
-					.banner h2 {
+					.heading {
 						position: relative;
 						display: inline-block;
 						top: -60px;
