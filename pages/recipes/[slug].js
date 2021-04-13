@@ -34,11 +34,6 @@ export default function RecipeDetails({ recipe }) {
 			</div>
 			<style jsx>
 				{`
-					h1,
-					h3 {
-						text-transform: uppercase;
-					}
-
 					h1 {
 						position: relative;
 						display: inline-block;
@@ -46,8 +41,14 @@ export default function RecipeDetails({ recipe }) {
 						left: -10px;
 						margin: 0;
 						padding: 20px;
-
+						transform: rotateZ(-1deg);
+						box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
 						background: #fff;
+					}
+
+					h1,
+					h3 {
+						text-transform: uppercase;
 					}
 
 					.info p {
