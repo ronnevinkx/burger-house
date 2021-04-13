@@ -34,12 +34,12 @@ export default function RecipeDetails({ recipe }) {
 			</div>
 			<style jsx>
 				{`
-					h2,
+					h1,
 					h3 {
 						text-transform: uppercase;
 					}
 
-					.banner h1 {
+					h1 {
 						position: relative;
 						display: inline-block;
 						top: -60px;
