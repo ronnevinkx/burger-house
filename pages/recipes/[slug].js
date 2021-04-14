@@ -1,8 +1,11 @@
 import Image from 'next/image';
 import { client } from '../../utils';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import Skeleton from '../../components/Skeleton';
 
 export default function RecipeDetails({ recipe }) {
+	if (!recipe) return <Skeleton />;
+
 	const {
 		title,
 		featuredImage,
@@ -19,9 +22,8 @@ export default function RecipeDetails({ recipe }) {
 					width={featuredImage.fields.file.details.image.width}
 					height={featuredImage.fields.file.details.image.height}
 				/>
-				<h2 className="heading">{title}</h2>
+				<h1>{title}</h1>
 			</div>
-			<h3 className="heading">Some header</h3>
 			<div className="info">
 				<p>Takes about {cookingTime} mins to cook. </p>
 				<h3>Ingredients:</h3>
@@ -31,11 +33,11 @@ export default function RecipeDetails({ recipe }) {
 			</div>
 			<div className="method">
 				<h3>Method:</h3>
-				<p>{documentToReactComponents(method)}</p>
+				<div>{documentToReactComponents(method)}</div>
 			</div>
 			<style jsx>
 				{`
-					.heading {
+					.banner h1 {
 						position: relative;
 						display: inline-block;
 						top: -60px;
@@ -47,7 +49,7 @@ export default function RecipeDetails({ recipe }) {
 						background: #fff;
 					}
 
-					h2,
+					h1,
 					h3 {
 						text-transform: uppercase;
 					}
@@ -97,8 +99,10 @@ export const getStaticPaths = async () => {
 
 	// if we set fallback to 'blocking', next will wait for the page to be generated
 	// via SSR, then cache it for future requests
+	// if false, next serves 404 page
+	// if true, next returns fallback version, fetch data in background and return when available
 	return {
 		paths,
-		fallback: 'blocking'
+		fallback: true
 	};
 };
