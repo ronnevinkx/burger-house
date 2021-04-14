@@ -90,6 +90,10 @@ export async function getStaticProps({ params: { slug } }) {
 
 	return {
 		props: {
+			meta: {
+				title: items[0].fields.title,
+				descr: ''
+			},
 			recipe: items[0]
 		},
 		revalidate: 10

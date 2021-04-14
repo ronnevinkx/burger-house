@@ -25,6 +25,10 @@ export async function getStaticProps() {
 
 	return {
 		props: {
+			meta: {
+				title: 'Original Texas Burger House',
+				descr: 'Best burger joint in town!'
+			},
 			recipes: items
 		},
 		revalidate: 10
