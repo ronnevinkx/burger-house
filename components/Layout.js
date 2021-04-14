@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
-export default function Layout({ children, title, descr }) {
+export default function Layout({ children, meta: { title, descr } }) {
 	return (
 		<>
 			<Head>
