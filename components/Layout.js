@@ -1,7 +1,15 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
-export default function Layout({ children, meta: { title, descr } }) {
+export default function Layout({
+	children,
+	meta = {
+		title: 'Original Texas Burger House',
+		descr: 'Best burger joint in town!'
+	}
+}) {
+	const { title, descr } = meta;
+
 	return (
 		<>
 			<Head>
