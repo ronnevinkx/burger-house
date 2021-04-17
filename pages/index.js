@@ -1,5 +1,6 @@
 import { client } from '../utils';
 import RecipeCard from '../components/RecipeCard';
+export const config = { amp: 'hybrid' };
 
 export default function Recipes({ recipes }) {
 	return (

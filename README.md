@@ -30,9 +30,8 @@ A simple Next.js app with Contentful.
 Based on [this](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jClk8wl1yJcN3Zlrr8YSA1) NetNinja tutorial, but with the following adjustments:
 
 -   React strict mode
--   AMP
--   Custom 404
--   Custom `_app.js`
+-   Hybrid AMP
+-   Custom 404 with countdown redirect
 -   Head
 
 ## Issues

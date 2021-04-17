@@ -1,9 +1,13 @@
+import { useAmp } from 'next/amp';
 import Image from 'next/image';
 import { client } from '../../utils';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Skeleton from '../../components/Skeleton';
+export const config = { amp: 'hybrid' };
 
 export default function RecipeDetails({ recipe }) {
+	const isAmp = useAmp();
+
 	if (!recipe) return <Skeleton />;
 
 	const {
@@ -17,11 +21,24 @@ export default function RecipeDetails({ recipe }) {
 	return (
 		<div>
 			<div className="banner">
-				<Image
-					src={`https:${featuredImage.fields.file.url}`}
-					width={featuredImage.fields.file.details.image.width}
-					height={featuredImage.fields.file.details.image.height}
-				/>
+				{isAmp ? (
+					<amp-img
+						src={`https:${featuredImage.fields.file.url}`}
+						width={featuredImage.fields.file.details.image.width}
+						height={featuredImage.fields.file.details.image.height}
+						alt={title}
+						title={title}
+						layout="intrinsic"
+					/>
+				) : (
+					<Image
+						src={`https:${featuredImage.fields.file.url}`}
+						width={featuredImage.fields.file.details.image.width}
+						height={featuredImage.fields.file.details.image.height}
+						alt={title}
+						title={title}
+					/>
+				)}
 				<h1>{title}</h1>
 			</div>
 			<div className="info">
