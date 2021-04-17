@@ -1,4 +1,3 @@
-import { useAmp } from 'next/amp';
 import Head from 'next/head';
 import Link from 'next/link';
 
@@ -9,7 +8,6 @@ export default function Layout({
 		descr: 'Best burger joint in town!'
 	}
 }) {
-	const isAmp = useAmp();
 	const { title, descr } = meta;
 
 	return (
@@ -22,7 +20,7 @@ export default function Layout({
 			</Head>
 			<div className="layout">
 				<header>
-					<Link href={`/${isAmp ? '?amp=1' : ''}`}>
+					<Link href="/">
 						<a>
 							<h2>
 								<span>Original Texas</span>

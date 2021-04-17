@@ -30,10 +30,15 @@ A simple Next.js app with Contentful.
 Based on [this](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jClk8wl1yJcN3Zlrr8YSA1) NetNinja tutorial, but with the following adjustments:
 
 -   React strict mode
--   Hybrid AMP
+-   AMP
 -   Custom 404 with countdown redirect
 -   Head
 
 ## Issues
 
 Contentful slug regex (not used due to unknown input error): `^[a-z0-9]+(?:-[a-z]0-9+)*$`
+
+## AMP
+
+-	`amp-img` instead of Next's `Image` component, same attributes except for AMP's `layout`.
+-	Entire site is `true` AMP. Use `hybrid` only when `true` isn't possible.

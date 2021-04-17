@@ -1,42 +1,25 @@
-import { useAmp } from 'next/amp';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function RecipeCard({ recipe }) {
-	const isAmp = useAmp();
 	const { title, slug, cookingTime, thumbnail } = recipe.fields;
 
 	return (
 		<div className="card">
 			<div className="featured">
-				<Link href={`/recipes/${slug}${isAmp ? '?amp=1' : ''}`}>
+				<Link href={`/recipes/${slug}`}>
 					<a>
-						{isAmp ? (
-							<amp-img
-								src={`https:${thumbnail.fields.file.url}`}
-								width={
-									thumbnail.fields.file.details.image.width
-								}
-								height={
-									thumbnail.fields.file.details.image.height
-								}
-								alt={title}
-								title={title}
-								layout="responsive"
-							/>
-						) : (
-							<Image
-								src={`https:${thumbnail.fields.file.url}`}
-								width={
-									thumbnail.fields.file.details.image.width
-								}
-								height={
-									thumbnail.fields.file.details.image.height
-								}
-								alt={title}
-								title={title}
-							/>
-						)}
+						<amp-img
+							src={`https:${thumbnail.fields.file.url}`}
+							width={
+								thumbnail.fields.file.details.image.width
+							}
+							height={
+								thumbnail.fields.file.details.image.height
+							}
+							alt={title}
+							title={title}
+							layout="responsive"
+						/>
 					</a>
 				</Link>
 			</div>
@@ -46,7 +29,7 @@ export default function RecipeCard({ recipe }) {
 					<p>Takes approx. {cookingTime} mins. to make</p>
 				</div>
 				<div className="actions">
-					<Link href={`/recipes/${slug}${isAmp ? '?amp=1' : ''}`}>
+					<Link href={`/recipes/${slug}`}>
 						<a>Cook this</a>
 					</Link>
 				</div>
