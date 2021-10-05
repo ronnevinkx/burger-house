@@ -40,7 +40,7 @@ export default function Layout({
 					body {
 						background: #f4e640;
 						margin: 0;
-						font-family: 'Roboto';
+						font-family: 'Roboto', Helvetica, Arial, sans-serif;
 						font-size: 1.5em;
 					}
 					.layout {
@@ -72,7 +72,7 @@ export default function Layout({
 					}
 					header span:last-child {
 						font-size: 1.5em;
-						font-weight: 800;
+						font-weight: 900;
 					}
 					header h2 {
 						font-size: 1.2em;

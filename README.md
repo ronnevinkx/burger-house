@@ -1,6 +1,6 @@
 # Burger House
 
-A simple Next.js app with Contentful.
+A simple Next.js app with Contentful. Data fetching through Contentful's Content Delivery API.
 
 ## Technologies
 
@@ -40,5 +40,5 @@ Contentful slug regex (not used due to unknown input error): `^[a-z0-9]+(?:-[a-z
 
 ## AMP
 
--	`amp-img` instead of Next's `Image` component, same attributes except for AMP's `layout`.
--	Entire site is `true` AMP. Use `hybrid` only when `true` isn't possible.
+-   `amp-img` instead of Next's `Image` component, same attributes except for AMP's `layout`.
+-   Entire site is `true` AMP. Use `hybrid` only when `true` isn't possible.
